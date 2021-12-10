@@ -223,11 +223,14 @@ window.onload = () => {
   // validar campos de los clientes
 
   function validateFieldsClients() {
-    if ((inputClientName.value != "") ||
-    (inputClientLastName.value != "") ||
-      (inputClientCui.value != "") ||
-      (inputClientLocation.value != "")
+    if ((inputClientName.value == "") ||
+    (inputClientLastName.value == "") ||
+      (inputClientCui.value == "") ||
+      (inputClientLocation.value == "")
     ) {
+      console.log("NO puede ingresar, faltan campos");
+    } else {
+    
       console.log("Ingreso correcto");
       createClient(
         inputClientName.value,
@@ -236,9 +239,6 @@ window.onload = () => {
         inputClientLocation.value
       );
       console.log(clients);
-    } else {
-      console.log("NO puede ingresar, faltan campos");
-   
     }
   }
 
