@@ -85,6 +85,10 @@ window.onload = () => {
 
   //---------------------------------------------------------------------------------
 
+  
+
+
+
   // Boton para el ingreso del Sign Up
   ingresoSI.addEventListener("click", function () {
     console.log("adios");
@@ -217,10 +221,10 @@ window.onload = () => {
 
   function validateFieldsClients() {
     if (
-      inputClientName.value == "" ||
-      inputClientLastName.value == "" ||
-      inputClientCui == "" ||
-      inputClientLocation == ""
+    (inputClientName.value == "") ||
+    (inputClientLastName.value == "") ||
+      (inputClientCui.value === "") ||
+      (inputClientLocation.value === "")
     ) {
       console.log("NO puede ingresar, faltan campos");
     } else {
@@ -234,6 +238,8 @@ window.onload = () => {
       console.log(clients);
     }
   }
+
+
 };
 
 // funciones
@@ -329,4 +335,4 @@ function createClient(nombre, apellido, cui, departamento) {
   };
   clients.push(client);
 }
-// funcion para la creacion de la tabla de clientes
+
