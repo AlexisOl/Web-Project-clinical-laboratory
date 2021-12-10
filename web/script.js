@@ -229,9 +229,11 @@ window.onload = () => {
       (inputClientLocation.value == "")
     ) {
       console.log("NO puede ingresar, faltan campos");
+      mostrarAlertaClienteNoCorrecto();
     } else {
     
       console.log("Ingreso correcto");
+      mostrarAlertaClienteCorrecto();
       createClient(
         inputClientName.value,
         inputClientLastName.value,
@@ -250,6 +252,7 @@ function mostrarRegistro() {
   document.getElementById("createAccount").style.display = "block";
   document.getElementById("login").style.display = "none";
   document.getElementById("alertaPasswordNoCoincide").style.display = "none";
+  bloquearAlertas();
 }
 function mostrarIngreso() {
   document.getElementById("createAccount").style.display = "none";
@@ -259,11 +262,14 @@ function mostrarIngreso() {
 function mostarRegistroCliente() {
   document.getElementById("addClients").style.display = "block";
   document.getElementById("login").style.display = "none";
+  bloquearAlertaCliente();
+   
 }
 
 function mostarListaClientes() {
   document.getElementById("listClients").style.display = "block";
   document.getElementById("addClients").style.display = "none";
+  bloquearAlertaCliente();
 }
 function regresarDeListaClientes() {
   document.getElementById("listClients").style.display = "none";
@@ -278,7 +284,17 @@ function mostrarCorrectoPassword() {
   document.getElementById("alertaPasswordCorrecto").style.display = "block";
   document.getElementById("alertaPasswordNoCoincide").style.display = "none";
 }
+function bloquearAlertas() {
+  document.getElementById("alertaPasswordCorrecto").style.display = "none";
+  document.getElementById("alertaPasswordNoCoincide").style.display = "none";
+  document.getElementById("alertaIngresoNoCorrecto").style.display = "none";
+  document.getElementById("alertaIngresoCorrecto").style.display = "none";
 
+}
+function bloquearAlertaCliente() {
+  document.getElementById("alertaIngresoNoCorrectoCliente").style.display = "none";
+  document.getElementById("alertaIngresoCorrectoCliente").style.display = "none";
+}
 //...........................................................................
 
 function mostrarAlertaSignUpCorrecto() {
@@ -289,6 +305,16 @@ function mostrarAlertaSignUpCorrecto() {
 function mostrarAlertaSignUpIncorrecto() {
   document.getElementById("alertaIngresoCorrecto").style.display = "none";
   document.getElementById("alertaIngresoNoCorrecto").style.display = "block";
+}
+
+
+function mostrarAlertaClienteCorrecto() {
+  document.getElementById("alertaIngresoNoCorrectoCliente").style.display = "none";
+  document.getElementById("alertaIngresoCorrectoCliente").style.display = "block";
+}
+function mostrarAlertaClienteNoCorrecto() {
+  document.getElementById("alertaIngresoNoCorrectoCliente").style.display = "block";
+  document.getElementById("alertaIngresoCorrectoCliente").style.display = "none";
 }
 
 //-------------------------------------------------------------

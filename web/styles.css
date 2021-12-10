@@ -50,4 +50,10 @@
     border-color: black;
     padding: 10 px;
   }
+  #alertaIngresoCorrectoCliente{
+    display: none;
+  }
+  #alertaIngresoNoCorrectoCliente{
+    display: none;
+  }
   
