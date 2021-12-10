@@ -1,0 +1,53 @@
+.buttonsSignUp {
+    align-items: center;
+    margin: 50 px;
+    padding: 30px;
+  }
+  .container {
+    margin-top: 160px;
+  }
+  body {
+    background: linear-gradient(135deg, #f97794 10%, #623aa2 100%);
+  }
+  .flex-nowrap {
+    size: 80px;
+    padding: 15 px;
+  }
+  
+  .modal-content {
+    margin-top: 150px;
+    background: radial-gradient(#b676b1 100%, #8f3a84 45%);
+  }
+  #createAccount {
+    display: none;
+  }
+  #addClients {
+    display: none;
+  }
+  #listClients {
+    display: none;
+  }
+  
+  #alertaPasswordNoCoincide {
+    display: none;
+  }
+  #alertaPasswordCorrecto {
+    display: none;
+  }
+  #alertaIngresoCorrecto {
+    display: none;
+  }
+  #alertaIngresoNoCorrecto {
+    display: none;
+  }
+  #NombreUserSpan {
+    display: flex;
+    height: 30px;
+  }
+  
+  table {
+    margin: 15 px;
+    border-color: black;
+    padding: 10 px;
+  }
+  
