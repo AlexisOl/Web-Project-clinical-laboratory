@@ -92,14 +92,11 @@ window.onload = () => {
   // Boton para el ingreso del Sign Up
   ingresoSI.addEventListener("click", function () {
     console.log("adios");
-    if (comprobarPassword().valueOf("false") && ((inputSingUpUser.value != "") ||
-    (inputSingUpPassword.value != "") ||
-      (inputSingUpCui.value != "")
-    )) {
+    if (comprobarPassword().valueOf("false")) {
       console.log("coincide");
-      mostrarCorrectoPassword();
+      //mostrarCorrectoPassword();
       validateFields();
-      mostrarAlertaSignUpCorrecto();
+      
       cancelarSI();
     } else {
       console.log("NOOOO coincide");
@@ -200,8 +197,14 @@ window.onload = () => {
 
   // Validar campos sign up
   function validateFields() {
-    
-
+    if (
+      inputSingUpUser.value == "" ||
+      inputSingUpPassword.value == "" ||
+      inputSingUpCui.value == ""
+    ) {
+      mostrarAlertaSignUpIncorrecto();
+      console.log("No puede ingresar");
+    } else {
       crearUsuario(
         inputSingUpUser.value,
         inputSingUpPassword.value,
@@ -212,20 +215,19 @@ window.onload = () => {
       console.log(users);
       console.log("password coincide");
       mostrarCorrectoPassword();
+      mostrarAlertaSignUpCorrecto();
+    }
    
   }
 
   // validar campos de los clientes
 
   function validateFieldsClients() {
-    if (
-    (inputClientName.value == "") ||
-    (inputClientLastName.value == "") ||
-      (inputClientCui.value === "") ||
-      (inputClientLocation.value === "")
+    if ((inputClientName.value != "") ||
+    (inputClientLastName.value != "") ||
+      (inputClientCui.value != "") ||
+      (inputClientLocation.value != "")
     ) {
-      console.log("NO puede ingresar, faltan campos");
-    } else {
       console.log("Ingreso correcto");
       createClient(
         inputClientName.value,
@@ -234,6 +236,9 @@ window.onload = () => {
         inputClientLocation.value
       );
       console.log(clients);
+    } else {
+      console.log("NO puede ingresar, faltan campos");
+   
     }
   }
 
