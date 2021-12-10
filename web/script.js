@@ -92,7 +92,10 @@ window.onload = () => {
   // Boton para el ingreso del Sign Up
   ingresoSI.addEventListener("click", function () {
     console.log("adios");
-    if (comprobarPassword().valueOf("false")) {
+    if (comprobarPassword().valueOf("false") && ((inputSingUpUser.value != "") ||
+    (inputSingUpPassword.value != "") ||
+      (inputSingUpCui.value != "")
+    )) {
       console.log("coincide");
       mostrarCorrectoPassword();
       validateFields();
@@ -197,13 +200,8 @@ window.onload = () => {
 
   // Validar campos sign up
   function validateFields() {
-    if (
-      inputSingUpUser.value == "" ||
-      inputSingUpPassword.value == "" ||
-      inputSingUpCui.value == ""
-    ) {
-      console.log("No puede ingresar");
-    } else {
+    
+
       crearUsuario(
         inputSingUpUser.value,
         inputSingUpPassword.value,
@@ -214,7 +212,7 @@ window.onload = () => {
       console.log(users);
       console.log("password coincide");
       mostrarCorrectoPassword();
-    }
+   
   }
 
   // validar campos de los clientes
